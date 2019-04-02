@@ -8,10 +8,10 @@ User = get_user_model()
 
 class Deck(models.Model):
     title = models.CharField(max_length=255)
-    creator = models.ForeignKey(Creator, on_delete=models.PROTECT)
+    # creator = models.ForeignKey(Creator, on_delete=models.PROTECT)
     user = models.ManyToManyField(User, related_name="user_decks", on_delete=models.PROTECT)
-    category = models.ManyToManyField(Category, related_name=deck_categories, on_delete=models.PROTECT)
-    round = models.ForeignKey(Round, related_name="deck_rounds", on_delete=PROTECT)
+    # category = models.ManyToManyField(Category, related_name=deck_categories, on_delete=models.PROTECT)
+    # round = models.ForeignKey(Round, related_name="deck_rounds", on_delete=PROTECT)
     public = models.BooleanField()
     correct = models.BooleanField()
     slug = models.SlugField()
